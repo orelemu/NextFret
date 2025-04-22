@@ -1,8 +1,8 @@
 import java.util.Scanner;
-
+import java.util.List;
 public class ConsoleUI implements UserInterface {
     private Scanner scanner = new Scanner(System.in);
-
+    private UserManager userManager;
     @Override
     public void showSign(){
         System.out.println("1. Log in");
@@ -49,9 +49,17 @@ public class ConsoleUI implements UserInterface {
 
     @Override
     public void addKnownChords() {
-        //printChordList();
+        System.out.print("the chords you know: ");
+        List<Chord> chords = userManager.getChordsForUser();
+        displayChordList(chords);
         //selectKnownChords();
         //updateDb();
+    }
+
+    private void displayChordList(List<Chord> chords) {
+        for (Chord chord : chords) {
+            System.out.println(chord);
+        }
     }
 
     @Override

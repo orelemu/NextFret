@@ -15,7 +15,7 @@ public class Main {
         File rootFolder = new File("/Users/yuvalgreenberg/Desktop/chrods/OLGA 2");
         Db db = new Db();
         ChordProParser parser = new ChordProParser();
-
+        RecommendationEngine recommendationEngine = new RecommendationEngine(db);
         processFolderRecursively(rootFolder, db, parser);
     }
 

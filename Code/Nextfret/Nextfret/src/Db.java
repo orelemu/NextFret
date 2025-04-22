@@ -1,4 +1,6 @@
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Db {
     private static final String URL = "jdbc:postgresql://localhost:5432/Nextfret";
@@ -124,5 +126,17 @@ public class Db {
             ps.setInt(2, chordId);
             ps.executeUpdate();
         }
+    }
+
+    public List<Song> getSongsFromChords(List<Chord> knwonChords) {
+        //String sql = "INSERT INTO song_chords (song_id, chord_id) VALUES (?, ?) ON CONFLICT DO NOTHING";
+        List<Song> songs = null;
+        return songs;
+    }
+
+
+    public List<Chord> getChordsForUser() {
+        List<Chord> chords = null;
+        return chords
     }
 }
