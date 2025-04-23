@@ -1,18 +1,20 @@
+import java.sql.SQLException;
+
 public interface UserInterface {
 
     void showSign();
 
     void showMenu();
 
-    void addKnownChords();
+    void addKnownChords() throws SQLException;
 
-    void recommendSongs();
+    void recommendSongs() throws SQLException;
 
-    void showChordsAndTabs();
+    void showChordsAndTabs() throws SQLException;
 
-    void signUp();
+    void signUp() throws SQLException;
 
-    void signIn();
+    void signIn() throws SQLException;
 
     void showFavorites();
 }

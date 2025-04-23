@@ -1,31 +1,24 @@
+// User.java
 import java.util.List;
-
 public class User {
-    private List<Chord> knwonChords;
-    private List<Song> knownSongs;
-    private String name;
+    private int id;
+    private String firstName, lastName, email;
+    private List<Chord> knownChords;
 
-    public List<Chord> getKnwonChords() {
-        return knwonChords;
+    public User(int id, String firstName, String lastName, String email) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName  = lastName;
+        this.email     = email;
     }
 
-    public void setKnwonChords(List<Chord> knwonChords) {
-        this.knwonChords = knwonChords;
-    }
+    public int getId() { return id; }
+    public String getFirstName() { return firstName; }
+    public String getLastName() { return lastName; }
+    public String getEmail() { return email; }
 
-    public List<Song> getKnownSongs() {
-        return knownSongs;
-    }
-
-    public void setKnownSongs(List<Song> knownSongs) {
-        this.knownSongs = knownSongs;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public List<Chord> getKnownChords() { return knownChords; }
+    public void setKnownChords(List<Chord> knownChords) {
+        this.knownChords = knownChords;
     }
 }

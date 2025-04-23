@@ -1,17 +1,15 @@
+// RecommendationEngine.java
+import java.sql.SQLException;
 import java.util.List;
 
-
 public class RecommendationEngine {
-    Db database;
+    private Db db;
 
-    public RecommendationEngine(Db database) {
-        this.database = database;
+    public RecommendationEngine(Db db) {
+        this.db = db;
     }
 
-    public List<Song> getReccomendedSongsForUser(User user) {
-        List<Song> songs = database.getSongsFromChords(user.getKnwonChords());
-        return songs;
+    public List<Song> getRecommendedSongsForUser(User user) throws SQLException {
+        return db.getSongsFromChords(user.getKnownChords());
     }
 }
-
-
